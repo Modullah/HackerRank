@@ -1,0 +1,28 @@
+
+
+    static int countingValleys(int n, String s) {
+        //valleys = # of valleys, sea= current sea level.
+        int valleys =0, sea = 0;
+
+        for(int i=0; i < n; i++){
+
+            char c = s.charAt(i);
+
+            if(c == 'U'){
+                sea++;
+            }else{
+                //else (c == 'D'), D=Downhill. 
+                sea--;
+            }
+
+            //If we just came up to sea level from a valley.
+            if( sea == 0 && c == 'U' ){
+                valleys++;
+            }
+
+            
+        }
+
+        return valleys;
+
+    }
